@@ -10,6 +10,7 @@ const App: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
 
+  // add item function
   const addItem = (name: string, quantity: number) => {
     const newItem: Item = {
       id: uuidv4(),
@@ -21,6 +22,7 @@ const App: React.FC = () => {
     setQuantity(1);
   };
 
+  // edit item function
   const editItem = (id: string) => {
     const itemToEdit = items.find((item) => item.id === id);
     if (itemToEdit) {
@@ -30,6 +32,7 @@ const App: React.FC = () => {
     }
   };
 
+  // update item function
   const updateItem = () => {
     if (!editingItemId) return;
     setItems(
@@ -42,6 +45,7 @@ const App: React.FC = () => {
     setEditingItemId(null);
   };
 
+  // delete item function
   const deleteItem = (id: string) => {
     setItems(items.filter((item) => item.id !== id));
   };
