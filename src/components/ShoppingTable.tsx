@@ -1,7 +1,6 @@
 import React from "react";
 import { ShoppingTableProps } from "./type";
 
-
 const ShoppingTable: React.FC<ShoppingTableProps> = ({
   items,
   editItem,
