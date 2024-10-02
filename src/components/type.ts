@@ -4,7 +4,6 @@ export interface Item {
   quantity: number;
 }
 
-
 export interface ShoppingFormProps {
   addItem: (name: string, quantity: number) => void;
   editingItemId: string | null;
