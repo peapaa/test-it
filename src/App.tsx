@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import ShoppingForm from "./components/ShoppingForm";
 import ShoppingTable from "./components/ShoppingTable";
 import { Item } from "./components/type";
+import { useTranslation } from "react-i18next";
+import { languages } from "./i18n/i18n";
 
 const App: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
@@ -49,9 +51,29 @@ const App: React.FC = () => {
   const deleteItem = (id: string) => {
     setItems(items.filter((item) => item.id !== id));
   };
+  const { i18n } = useTranslation();
+  const changeLanguage = (language: "en" | "jp") => {
+    i18n.changeLanguage(language);
+  };
 
+  console.log(i18n.language);
+  const showLanguage = languages[i18n.language as keyof typeof languages];
+  console.log("showLanguage", showLanguage);
   return (
     <div className="flex flex-col justify-center max-w-[1200px] w-full px-8 h-screen">
+      <button
+        className="bg-orange-500 w-20"
+        onClick={() => changeLanguage("en")}
+      >
+        Tiếng anh
+      </button>
+      <button
+        className="bg-orange-500 w-20"
+        onClick={() => changeLanguage("jp")}
+      >
+        Tiếng nhật
+      </button>
+      <h2>{showLanguage}</h2>
       <h1>Shopping List</h1>
       <ShoppingForm
         addItem={addItem}
