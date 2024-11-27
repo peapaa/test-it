@@ -1,6 +1,6 @@
-import { ShoppingFormProps } from "./type";
-import { useAppContext } from "../hooks/useAppContext";
-import { useTranslation } from "react-i18next";
+import { ShoppingFormProps } from './type';
+import { useAppContext } from '../hooks/useAppContext';
+import { useTranslation } from 'react-i18next';
 
 const ShoppingForm: React.FC<ShoppingFormProps> = ({
   addItem,
@@ -13,11 +13,11 @@ const ShoppingForm: React.FC<ShoppingFormProps> = ({
 }) => {
   const context = useAppContext();
   const { language, setLanguage } = context;
-  console.log("language", language);
-  const { t } = useTranslation(["home", "product"]);
+  console.log('language', language);
+  const { t } = useTranslation(['home', 'product']);
   return (
     <div className="flex flex-col gap-3 mb-4">
-      <h1 className="text-red-500">{t("product:product.title")}</h1>
+      <h1 className="text-red-500">{t('product:product.title')}</h1>
       <div>
         <input
           type="text"
@@ -48,7 +48,7 @@ const ShoppingForm: React.FC<ShoppingFormProps> = ({
             }}
             className="bg-green-500 text-white px-4 py-2 rounded w-full hover:bg-green-600"
           >
-            {t("home.button")}
+            {t('home.button')} test i18n
           </button>
         )}
       </div>
