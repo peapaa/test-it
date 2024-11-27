@@ -1,5 +1,5 @@
-import React from "react";
-import { ShoppingTableProps } from "./type";
+import React from 'react';
+import { ShoppingTableProps } from './type';
 
 const ShoppingTable: React.FC<ShoppingTableProps> = ({
   items,
@@ -35,7 +35,7 @@ const ShoppingTable: React.FC<ShoppingTableProps> = ({
                 onClick={() => deleteItem(item.id)}
                 className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
               >
-                削除
+                削除 test 2
               </button>
             </td>
           </tr>
