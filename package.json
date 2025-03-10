@@ -1,6 +1,5 @@
 {
-  "name": "test-it",
-  "private": true,
+  "name": "@thiendd123/test-it",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

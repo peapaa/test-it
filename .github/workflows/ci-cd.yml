@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master # hoặc branch bạn muốn trigger workflow
+
+jobs:
+  build_and_publish:
+    runs-on: windows-latest
+
+    steps:
+      # Bước 1: Checkout mã nguồn
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Bước 2: Cài đặt Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Bước 3: Cài đặt dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Bước 4: Publish gói npm (nếu các bước trước thành công)
+      - name: Publish Package to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
