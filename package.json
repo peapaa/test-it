@@ -1,11 +1,7 @@
 {
   "name": "@thiendd123/test-it",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/peapaa/test-it.git"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

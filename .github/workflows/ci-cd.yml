@@ -25,14 +25,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Bước 4: run update version
-      - name: Run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
-
-      # Bước 5: Publish gói npm (nếu các bước trước thành công)
+      # Bước 4: Publish gói npm (nếu các bước trước thành công)
       - name: Publish Package to npm
         run: npm publish --access public
         env:
